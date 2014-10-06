@@ -19,7 +19,8 @@ public class JVMTriangle
             return -1;
         }
         if (a == b && b == c) return 0;     //Equilateral
-        if (a == b || a == c || b == c) return 1;   //Isosceles
-        return 2;                           //Must be scalene
+        else if (a == b || a == c || b == c) return 1;   //Isosceles
+        else
+		   return 2;                           //Must be scalene
     }
 }
