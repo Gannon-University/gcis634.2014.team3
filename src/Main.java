@@ -9,7 +9,7 @@ public class Main
     {
         Interpreter code = new Interpreter("triangleType.txt", "public static int type(int, int, int);");
 
-        test(3, 4, 5, 3, code);       //Scalene (right angled)
+        test(3, 4, 5, 2, code);       //Scalene (right angled)
         test(4, 4, 5, 1, code);       //Isosceles
         test(4, 4, 4, 0, code);       //Equilateral
         //Now tests that will fail
