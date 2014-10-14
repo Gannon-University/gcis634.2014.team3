@@ -1,5 +1,6 @@
-edit file <<nasser
-loie 2<<Nasser
+lone 1 <<nasser
+linee 2<<Nasser
+line 3<<nasser
 
 
 
