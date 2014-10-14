@@ -1,5 +1,5 @@
-first line
-1first line
+edit file <<nasser
+loie 2<<Nasser
 
 
 
