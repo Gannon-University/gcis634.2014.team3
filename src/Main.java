@@ -8,10 +8,25 @@ public class Main
     public static void main(String[] args) throws FileNotFoundException
     {
         Interpreter code = new Interpreter("triangleType.txt", "public static int type(int, int, int);");
-
-        test(3, 4, 5, 2, code);       //Scalene (right angled)
-        test(4, 4, 5, 1, code);       //Isosceles
-        test(4, 4, 4, 0, code);       //Equilateral
+		
+		test(1, 1, 1, 0, code);   //Equilateral
+		test(2, 2, 2, 0, code);   //Equilateral
+		test(3, 3, 3, 0, code);   //Equilateral
+		test(4, 4, 4, 0, code);   //Equilateral
+		
+		test(4, 4, 5, 1, code);   //Isosceles
+		test(4, 5, 5, 1, code);   //Isosceles
+		test(7, 7, 6, 1, code);   //Isosceles
+		test(8, 8, 6, 1, code);   //Isosceles
+		
+        test(3, 4, 5, 2, code);    //Scalene 
+		test(4, 8, 12, 2, code); //Scalene
+		test(6, 12, 14, 2, code); //Scalene
+		test(4, 6, 9, 2, code); //Scalene
+		
+        
+  
+		
         //Now tests that will fail
         test(0, 1, 1, -1, code);      //Error with a
         test(1, 201, 1, -1, code);    //Error with b
