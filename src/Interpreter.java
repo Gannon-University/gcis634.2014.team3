@@ -73,11 +73,11 @@ public class Interpreter
                 }
             }
             opcodes[address] = new Opcode(instr, value, constant);
-            //System.out.println(address + ":" + opcodes[address]);
+           
         }
     }
 
-    public int run(int a, int b, int c)
+    public int run(int a, int b, int c)//check the Interpreter
     {
         int[] locals = new int[10];
         String constant = null;
@@ -89,7 +89,7 @@ public class Interpreter
         Opcode opcode;
         while (true)
         {
-            //System.out.println(pc + ":" + opcodes[pc]);
+           
             opcode = opcodes[pc++];
             switch (opcode.inst)
             {

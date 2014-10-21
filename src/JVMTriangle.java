@@ -18,6 +18,7 @@ public class JVMTriangle
             if (c3) System.out.println("Value of c is not in range of valid values");
             return -1;
         }
+        //check the tringle type
         if (a == b && b == c) return 0;     //Equilateral
         if (a == b || a == c || b == c) return 1;   //Isosceles
         return 2;                           //Must be scalene

@@ -30,7 +30,7 @@ public class TestInterpreter
     public void testSipush() {
         Interpreter interpreter = new Interpreter();
         interpreter.opcodes[2] = new Opcode("sipush", 123, null);
-        Assert.assertEquals(interpreter.run(3, 9, 3), 123);   //Test constant
+        Assert.assertEquals(interpreter.run(3, 9, 3), 123);   //Test push
     }
 
     @Test
@@ -39,7 +39,7 @@ public class TestInterpreter
         interpreter.opcodes[2] = new Opcode("goto", 5, null);
         interpreter.opcodes[5] = new Opcode("iconst", 99, null);
         interpreter.opcodes[6] = new Opcode("ireturn", 123, null);
-        Assert.assertEquals(interpreter.run(3, 9, 3), 99);   //Test constant
+        Assert.assertEquals(interpreter.run(3, 9, 3), 99);   //Test goTo
     }
 
 }
