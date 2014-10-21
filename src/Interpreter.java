@@ -73,7 +73,7 @@ public class Interpreter
                 }
             }
             opcodes[address] = new Opcode(instr, value, constant);
-            //System.out.println(address + ":" + opcodes[address]);
+           
         }
     }
 
@@ -89,7 +89,7 @@ public class Interpreter
         Opcode opcode;
         while (true)
         {
-            //System.out.println(pc + ":" + opcodes[pc]);
+           
             opcode = opcodes[pc++];
             switch (opcode.inst)
             {
