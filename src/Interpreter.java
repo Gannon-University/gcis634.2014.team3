@@ -11,7 +11,7 @@ public class Interpreter
     int[] stack;
     int sp;
 
-    //For testing only
+    //for testing only.
     public Interpreter()
     {
         opcodes = new Opcode[12];
@@ -26,13 +26,13 @@ public class Interpreter
 
     public Interpreter(String filename, String method) throws FileNotFoundException
     {
-        Scanner scanner = new Scanner(new File("triangleType.txt"));
+        Scanner scanner = new Scanner(new File("triangleType.txt")); //to read from the file containing bytecode instructions.
         opcodes = new Opcode[1000];
         stack = new int[10];
         sp = 0;
         boolean skip = true;
 
-        while (scanner.hasNext())
+        while (scanner.hasNext()) //stops when there are no more instructions.
         {
             String line = scanner.nextLine().trim();
             if (line.equals(method))

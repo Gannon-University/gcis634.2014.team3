@@ -38,14 +38,15 @@ public class Main
     {
         switch (type)
         {
-            default:
-                return "NotATriangle";
+            
             case 0:
                 return "Equilateral";
             case 1:
                 return "Isosceles";
             case 2:
                 return "Scalene";
+			default:
+                return "NotATriangle";
         }
     }
 

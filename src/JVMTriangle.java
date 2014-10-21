@@ -5,13 +5,13 @@ public class JVMTriangle
 {
     public static int type(int a, int b, int c)
     {
-        boolean c1 = a < 1 || a > 200;
-        boolean c2 = b < 1 || b > 200;
-        boolean c3 = c < 1 || c > 200;
-        boolean c4 = a > b + c;
+        boolean c1 = a < 1 || a > 200; //False if a is in range; otherwise True.
+        boolean c2 = b < 1 || b > 200;  //False if a is in range; otherwise True.
+        boolean c3 = c < 1 || c > 200;  //False if a is in range; otherwise True.
+        boolean c4 = a > b + c; 
         boolean c5 = b > a + c;
         boolean c6 = c > a + b;
-        if (c1 | c2 | c3 | c4 | c5 | c6)
+        if (c1 | c2 | c3 | c4 | c5 | c6) //if any of them is True, return -1 with the appropriate messege.
         {
             if (c1) System.out.println("Value of a is not in range of valid values");
             if (c2) System.out.println("Value of b is not in range of valid values");
