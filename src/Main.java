@@ -13,23 +13,25 @@ public class Main
 		test(2, 2, 2, 0, code);   //Equilateral
 		test(3, 3, 3, 0, code);   //Equilateral
 		test(4, 4, 4, 0, code);   //Equilateral
-        test(5, 5, 5, 0, code);   //Equilateral
+        	test(5, 5, 5, 0, code);   //Equilateral
+		test(6, 6, 6, 0, code);   //Equilateral
         
 		
 		test(4, 4, 5, 1, code);   //Isosceles
 		test(4, 5, 5, 1, code);   //Isosceles
 		test(7, 7, 6, 1, code);   //Isosceles
 		test(8, 8, 6, 1, code);   //Isosceles
-        test(4, 3, 3, 1, code);   //Isosceles
+       		test(4, 3, 3, 1, code);   //Isosceles
+		test(10, 9, 9, 1, code);   //Isosceles
 		
         	test(3, 4, 5, 2, code);    //Scalene 
-		test(4, 8, 12, 2, code); //Scalene
-		test(6, 12, 14, 2, code); //Scalene
-		test(4, 6, 9, 2, code); //Scalene
-        test(3, 4, 7, 2, code);    //Scalene
+		test(4, 8, 12, 2, code);   //Scalene
+		test(6, 12, 14, 2, code);  //Scalene
+		test(4, 6, 9, 2, code);    //Scalene
+        	test(3, 4, 7, 2, code);    //Scalene
+		test(5, 8, 9, 2, code);    //Scalene
 
-		
-        
+
   
 		
         //Now tests that will fail
