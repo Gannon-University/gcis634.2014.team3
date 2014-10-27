@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class Interpreter
 {
-    public Opcode[] opcodes;    //Public for testing
+    public Opcode[] opcodes;  //Public for testing
     int[] stack;
     int sp;
 
