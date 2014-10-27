@@ -20,7 +20,7 @@ public class Main
         test(1, 3, 1, -1, code);      //Error b > a + c
         test(1, 1, 3, -1, code);      //Error c > a + b
 
-        //test(1, 1, 203, -1, code);      //Error c > a + b
+             //Error c > a + b
     }
 
     private static void test(int a, int b, int c, int expected, Interpreter code)
