@@ -7,6 +7,7 @@ public class Main
 {
     public static void main(String[] args) throws FileNotFoundException
     {
+        
         Interpreter code = new Interpreter("triangleType.txt", "public static int type(int, int, int);");
 
         test(3, 4, 5, 2, code);       //Scalene (right angled)
