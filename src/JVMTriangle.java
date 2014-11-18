@@ -21,6 +21,10 @@ public class JVMTriangle
         //check the tringle type
         if (a == b && b == c) return 0;     //Equilateral
         if (a == b || a == c || b == c) return 1;   //Isosceles
+<<<<<<< HEAD
         return 2;                           //Must be 
+=======
+        return 2;                           //Must be scalene
+>>>>>>> 494635e9c7d25b161b1b56ad97f9abfdd0b10c76
     }
 }
