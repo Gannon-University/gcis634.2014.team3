@@ -1,22 +1,34 @@
+
+/**
+ * Interpreter.java
+ *
+ * Created on Nov 11, 2014, 6:00 PM
+ *
+ *
+ * Copyright (c) 2014 Nasser.
+ *
+ * This program is free software
+ * 
+ * JVM Interpreter
+ */
+
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-/**
- * JVM Interpreter
- */
-public class Interpreter
-{
+
+public class Interpreter{ //layout change with { }
     public Opcode[] opcodes;  //Public for testing
-    int[] stack;
-    int sp;
+    private int[] stack;       //
+    private  int sp;
 
     //for testing only.
-    public Interpreter()
+    public Interpreter() //default Constructor
     {
-        opcodes = new Opcode[12];
-        stack = new int[10];
-        sp = 0;
+       this.opcodes = new Opcode[12];//layout change (this.stack)
+        this.stack = new int[10];
+        this.sp = 0;
 
         opcodes[0] = new Opcode("iload",0,null);
         opcodes[1] = new Opcode("iload",1,null);
@@ -24,19 +36,17 @@ public class Interpreter
         opcodes[3] = new Opcode("ireturn",0,null);
     }
 
-    public Interpreter(String filename, String method) throws FileNotFoundException
-    {
+    public Interpreter(String filename, String method) throws FileNotFoundException {
         Scanner scanner = new Scanner(new File("triangleType.txt")); //to read from the file containing bytecode instructions.
-        opcodes = new Opcode[1000];
-        stack = new int[10];
-        sp = 0;
+        this.opcodes = new Opcode[1000];
+        this.stack = new int[10];
+        this.sp = 0;
         boolean skip = true;
 
-        while (scanner.hasNext()) //stops when there are no more instructions.
-        {
+        while (scanner.hasNext()){ //stops when there are no more instructions.
+        
             String line = scanner.nextLine().trim();
-            if (line.equals(method))
-            {
+            if (line.equals(method)){
                 skip = false;
                 scanner.nextLine();     //Skip Code: line
                 continue;
@@ -81,7 +91,7 @@ public class Interpreter
     {
         int[] locals = new int[10];
         String constant = null;
-        int pc = 0;
+        int counter = 0; //change the naming fro pc to counter.
         locals[0] = a;
         locals[1] = b;
         locals[2] = c;
@@ -90,9 +100,8 @@ public class Interpreter
         while (true)
         {
            
-            opcode = opcodes[pc++];
-            switch (opcode.inst)
-            {
+            opcode = opcodes[counter++];
+            switch (opcode.inst){
                 case ILOAD:
                     push(locals[opcode.value]);
                     break;
@@ -116,34 +125,34 @@ public class Interpreter
                     push(opcode.value);
                     break;
                 case GOTO:
-                    pc = opcode.value;
+                    counter = opcode.value;
                     break;
                 case IRETURN:
                     return pop();
                 case IF_ICMPLT:
-                    if (pop() > pop()) pc = opcode.value;
+                    if (pop() > pop()) counter = opcode.value;
                     break;
                 case IF_ICMPLE:
-                    if (pop() >= pop()) pc = opcode.value;
+                    if (pop() >= pop()) counter = opcode.value;
                     break;
                 case IF_ICMPNE:
-                    if (pop() != pop()) pc = opcode.value;
+                    if (pop() != pop()) counter = opcode.value;
                     break;
                 case IF_ICMPEQ:
-                    if (pop() == pop()) pc = opcode.value;
+                    if (pop() == pop()) counter = opcode.value;
                     break;
                 case IFEQ:
-                    if (pop() == 0) pc = opcode.value;
+                    if (pop() == 0) counter = opcode.value;
                     break;
                 case GETSTATIC:
                     break;
                 default:
-                    System.out.println(pc + ":" + opcode);
+                    System.out.println(counter + ":" + opcode);
                     return 0;
 
             }
            
-            while (opcodes[pc] == null) pc++;
+            while (opcodes[counter] == null) counter++;
         }
     }
 
