@@ -13,7 +13,7 @@ public class Main
 		test(2, 2, 2, 0, code);   
 		test(3, 3, 3, 0, code);   
 		test(4, 4, 4, 0, code);   
-        test(5, 5, 5, 0, code);   
+         	test(5, 5, 5, 0, code);   
 		test(6, 6, 6, 0, code);   
         	
 		//Isosceles:
@@ -21,24 +21,24 @@ public class Main
 		test(4, 5, 5, 1, code);   
 		test(7, 7, 6, 1, code);   
 		test(8, 8, 6, 1, code);   
-       	test(4, 3, 3, 1, code);   
+       		test(4, 3, 3, 1, code);   
 		test(10, 9, 9, 1, code);   
 		
 		//Scalene:
-        test(3, 4, 5, 2, code);    
+        	test(3, 4, 5, 2, code);    
 		test(4, 8, 12, 2, code);   
 		test(6, 12, 14, 2, code);  
 		test(4, 6, 9, 2, code);    
-        test(3, 4, 7, 2, code);    
+        	test(3, 4, 7, 2, code);    
 		test(5, 8, 9, 2, code);    
 		
-        //Now tests that will fail
-        test(0, 1, 1, -1, code);      //Error with a
-        test(1, 201, 1, -1, code);    //Error with b
-        test(1, 200, -1, -1, code);   //Error with c
-        test(3, 1, 1, -1, code);      //Error a > b + c
-        test(1, 3, 1, -1, code);      //Error b > a + c
-        test(1, 1, 3, -1, code);      //Error c > a + b
+		 //Now tests that will fail
+		test(0, 1, 1, -1, code);      //Error with a
+        	test(1, 201, 1, -1, code);    //Error with b
+		test(1, 200, -1, -1, code);   //Error with c
+		test(3, 1, 1, -1, code);      //Error a > b + c
+		test(1, 3, 1, -1, code);      //Error b > a + c
+  		test(1, 1, 3, -1, code);      //Error c > a + b
 		test(1, 1, 203, -1, code);    //Error c > a + b
     }
 
@@ -59,7 +59,7 @@ public class Main
                 return "Isosceles";
             case 2:
                 return "Scalene";
-			default:
+	    default:
                 return "NotATriangle";
         }
     }
