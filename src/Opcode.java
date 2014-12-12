@@ -1,15 +1,13 @@
 /**
  * Simple opcode class
  */
-public class Opcode
-{
+public class Opcode{
     public Instruction inst;
     public String instr;
     public int value;
     public String constant;
 
-    public Opcode(String instr, int value, String constant)
-    {
+    public Opcode(String instr, int value, String constant){
         inst = Instruction.valueOf(instr.toUpperCase());
         this.instr = instr;
         this.value = value;
@@ -17,12 +15,10 @@ public class Opcode
     }
 
     @Override
-    public String toString()
-    {
+    public String toString(){
         final StringBuffer sb = new StringBuffer(30);
         sb.append(inst);
-        switch (inst)
-        {
+        switch (inst){
             case GETSTATIC:
             case LDC:
             case INVOKEVIRTUAL:

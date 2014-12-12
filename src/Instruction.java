@@ -1,9 +1,8 @@
 /**
  * Different instructions
  */
-public enum Instruction
-{
-    ILOAD,
+public enum Instruction{
+	ILOAD,
     ICONST,
     IF_ICMPLT,
     SIPUSH,
