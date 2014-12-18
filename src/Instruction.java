@@ -1,9 +1,14 @@
 /**
  * Different instructions
  */
+<<<<<<< HEAD
 public enum Instruction
 {
     ILOAD,
+=======
+public enum Instruction{
+	ILOAD,
+>>>>>>> 351920a82d42d3062a47449d8b8fc1657bd82c38
     ICONST,
     IF_ICMPLT,
     SIPUSH,

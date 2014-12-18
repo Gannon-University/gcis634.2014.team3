@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>TestInterpetor</name>
+=======
+	<name>JVMIntrptr</name>
+>>>>>>> 351920a82d42d3062a47449d8b8fc1657bd82c38
 	<comment></comment>
 	<projects>
 	</projects>

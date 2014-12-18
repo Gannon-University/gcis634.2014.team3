@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 /**
  * Interpreter.java
@@ -13,10 +14,13 @@
  */
 
 
+=======
+>>>>>>> 351920a82d42d3062a47449d8b8fc1657bd82c38
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+<<<<<<< HEAD
 
 public class Interpreter{ //layout change with { }
     public Opcode[] opcodes;  //Public for testing
@@ -29,6 +33,23 @@ public class Interpreter{ //layout change with { }
        this.opcodes = new Opcode[12];//layout change (this.stack)
         this.stack = new int[10];
         this.sp = 0;
+=======
+/**
+ * JVM Interpreter
+ */
+public class Interpreter
+{
+    public Opcode[] opcodes;    //Public for testing
+    int[] stack;
+    int sp;
+
+    //for testing only.
+    public Interpreter()
+    {
+        opcodes = new Opcode[12];
+        stack = new int[10];
+        sp = 0;
+>>>>>>> 351920a82d42d3062a47449d8b8fc1657bd82c38
 
         opcodes[0] = new Opcode("iload",0,null);
         opcodes[1] = new Opcode("iload",1,null);
@@ -36,6 +57,7 @@ public class Interpreter{ //layout change with { }
         opcodes[3] = new Opcode("ireturn",0,null);
     }
 
+<<<<<<< HEAD
     public Interpreter(String filename, String method) throws FileNotFoundException {
         Scanner scanner = new Scanner(new File("triangleType.txt")); //to read from the file containing bytecode instructions.
         this.opcodes = new Opcode[1000];
@@ -47,6 +69,21 @@ public class Interpreter{ //layout change with { }
         
             String line = scanner.nextLine().trim();
             if (line.equals(method)){
+=======
+    public Interpreter(String filename, String method) throws FileNotFoundException
+    {
+        Scanner scanner = new Scanner(new File("triangleType.txt")); //to read from the file containing bytecode instructions.
+        opcodes = new Opcode[1000];
+        stack = new int[10];
+        sp = 0;
+        boolean skip = true;
+
+        while (scanner.hasNext()) //stops when there are no more instructions.
+        {
+            String line = scanner.nextLine().trim();
+            if (line.equals(method))
+            {
+>>>>>>> 351920a82d42d3062a47449d8b8fc1657bd82c38
                 skip = false;
                 scanner.nextLine();     //Skip Code: line
                 continue;
@@ -91,7 +128,11 @@ public class Interpreter{ //layout change with { }
     {
         int[] locals = new int[10];
         String constant = null;
+<<<<<<< HEAD
         int counter = 0; //change the naming from pc to counter.
+=======
+        int pc = 0;
+>>>>>>> 351920a82d42d3062a47449d8b8fc1657bd82c38
         locals[0] = a;
         locals[1] = b;
         locals[2] = c;
@@ -100,8 +141,14 @@ public class Interpreter{ //layout change with { }
         while (true)
         {
            
+<<<<<<< HEAD
             opcode = opcodes[counter++];
             switch (opcode.inst){
+=======
+            opcode = opcodes[pc++];
+            switch (opcode.inst)
+            {
+>>>>>>> 351920a82d42d3062a47449d8b8fc1657bd82c38
                 case ILOAD:
                     push(locals[opcode.value]);
                     break;
@@ -125,11 +172,16 @@ public class Interpreter{ //layout change with { }
                     push(opcode.value);
                     break;
                 case GOTO:
+<<<<<<< HEAD
                     counter = opcode.value;
+=======
+                    pc = opcode.value;
+>>>>>>> 351920a82d42d3062a47449d8b8fc1657bd82c38
                     break;
                 case IRETURN:
                     return pop();
                 case IF_ICMPLT:
+<<<<<<< HEAD
                     if (pop() > pop()) counter = opcode.value;
                     break;
                 case IF_ICMPLE:
@@ -143,16 +195,39 @@ public class Interpreter{ //layout change with { }
                     break;
                 case IFEQ:
                     if (pop() == 0) counter = opcode.value;
+=======
+                    if (pop() > pop()) pc = opcode.value;
+                    break;
+                case IF_ICMPLE:
+                    if (pop() >= pop()) pc = opcode.value;
+                    break;
+                case IF_ICMPNE:
+                    if (pop() != pop()) pc = opcode.value;
+                    break;
+                case IF_ICMPEQ:
+                    if (pop() == pop()) pc = opcode.value;
+                    break;
+                case IFEQ:
+                    if (pop() == 0) pc = opcode.value;
+>>>>>>> 351920a82d42d3062a47449d8b8fc1657bd82c38
                     break;
                 case GETSTATIC:
                     break;
                 default:
+<<<<<<< HEAD
                     System.out.println(counter + ":" + opcode);
+=======
+                    System.out.println(pc + ":" + opcode);
+>>>>>>> 351920a82d42d3062a47449d8b8fc1657bd82c38
                     return 0;
 
             }
            
+<<<<<<< HEAD
             while (opcodes[counter] == null) counter++;
+=======
+            while (opcodes[pc] == null) pc++;
+>>>>>>> 351920a82d42d3062a47449d8b8fc1657bd82c38
         }
     }
 
